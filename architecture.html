@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Product Architecture · Intelligent Asset Lifecycle Orchestration</title>
+<meta name="description" content="How the coordination layer works: cross-vendor adapters, the detect-triage-dispatch-verify engine, an operator-owned evidence ledger, where AI sits, and the security posture."/>
+<link rel="stylesheet" href="style.css"/>
+<script src="gate.js"></script>
+<script src="nav.js"></script>
+</head><body>
+
+<main>
+<header class="page">
+<div class="eyebrow">Product Architecture</div>
+<h1>How it works</h1>
+<p class="subtitle">A thin, vendor-neutral layer over the systems that already exist: read mixed signals in, coordinate a verified repair, write evidence the operator owns.</p>
+</header>
+
+<h2>Principles</h2>
+<ul>
+<li><b>Operator-owned data.</b> The condition record belongs to the operator; we never resell it. This is the flipped data play, provable good condition to lower their own cost of capital.</li>
+<li><b>Vendor-neutral by construction.</b> A canonical asset/fault model with thin adapters, so adding a CPMS or OEM is configuration, not a new codebase. This is how we avoid the "trenchcoat" of N bespoke integrations.</li>
+<li><b>Labor-agnostic.</b> We coordinate the operator's own crews and any vendor; we don't own the wrench.</li>
+<li><b>Verified restoration, not "ticket closed."</b> The loop isn't done until the asset is confirmed back to good condition.</li>
+<li><b>Integrate, don't replace.</b> We sit above the system of record and across the network tools, not in place of them.</li>
+</ul>
+
+<h2>The layer, end to end</h2>
+<div class="box" style="background:#fff;border:1px solid #ccc;overflow-x:auto">
+<svg viewBox="0 0 860 430" width="100%" role="img" aria-label="Architecture diagram: mixed signal sources flow through adapters into the core engine (detect, triage, dispatch, verify, record), backed by an operator-owned evidence ledger, and out to field crews, the system of record, and compliance reporting."
+ style="font-family:Arial,Helvetica,sans-serif;min-width:720px">
+ <defs>
+   <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#111"/></marker>
+ </defs>
+ <!-- column titles -->
+ <text x="95" y="24" font-size="11" font-weight="bold" fill="#777" text-anchor="middle">SIGNAL SOURCES</text>
+ <text x="300" y="24" font-size="11" font-weight="bold" fill="#777" text-anchor="middle">ADAPTERS</text>
+ <text x="520" y="24" font-size="11" font-weight="bold" fill="#777" text-anchor="middle">CORE ENGINE</text>
+ <text x="770" y="24" font-size="11" font-weight="bold" fill="#777" text-anchor="middle">ACTIONS OUT</text>
+
+ <!-- sources -->
+ <g font-size="12" fill="#111">
+  <rect x="20" y="40" width="150" height="34" fill="#fafafa" stroke="#bbb"/><text x="95" y="61" text-anchor="middle">CPMS (mixed hardware)</text>
+  <rect x="20" y="86" width="150" height="34" fill="#fafafa" stroke="#bbb"/><text x="95" y="107" text-anchor="middle">Charger / OEM telemetry</text>
+  <rect x="20" y="132" width="150" height="34" fill="#fafafa" stroke="#bbb"/><text x="95" y="153" text-anchor="middle">Port estate sensors</text>
+  <rect x="20" y="178" width="150" height="34" fill="#fafafa" stroke="#bbb"/><text x="95" y="199" text-anchor="middle">Driver / fault reports</text>
+ </g>
+
+ <!-- adapters -->
+ <rect x="235" y="40" width="130" height="172" fill="#eef4f0" stroke="#2e8b57"/>
+ <text x="300" y="120" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2e8b57">Canonical</text>
+ <text x="300" y="138" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2e8b57">asset / fault</text>
+ <text x="300" y="156" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#2e8b57">model</text>
+ <text x="300" y="182" text-anchor="middle" font-size="10.5" fill="#555">thin, config-driven</text>
+
+ <!-- core engine -->
+ <rect x="430" y="40" width="180" height="300" fill="#111"/>
+ <g fill="#fff" font-size="13" text-anchor="middle">
+   <rect x="446" y="58" width="148" height="40" fill="#1f1f1f" stroke="#444"/><text x="520" y="83">1 · Detect</text>
+   <rect x="446" y="106" width="148" height="40" fill="#1f1f1f" stroke="#444"/><text x="520" y="131">2 · Triage</text>
+   <rect x="446" y="154" width="148" height="40" fill="#1f1f1f" stroke="#444"/><text x="520" y="179">3 · Dispatch</text>
+   <rect x="446" y="202" width="148" height="40" fill="#1f1f1f" stroke="#444"/><text x="520" y="227">4 · Verify</text>
+   <rect x="446" y="250" width="148" height="40" fill="#1f1f1f" stroke="#444"/><text x="520" y="275">5 · Record</text>
+ </g>
+ <!-- evidence ledger -->
+ <rect x="430" y="352" width="180" height="42" fill="#2e8b57"/>
+ <text x="520" y="373" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Operator-owned</text>
+ <text x="520" y="388" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">evidence ledger</text>
+
+ <!-- actions out -->
+ <g font-size="12" fill="#111">
+  <rect x="675" y="58" width="165" height="40" fill="#fafafa" stroke="#bbb"/><text x="757" y="82" text-anchor="middle">Field crews / FSM</text>
+  <rect x="675" y="130" width="165" height="40" fill="#fafafa" stroke="#bbb"/><text x="757" y="150" text-anchor="middle">EAM system of record</text>
+  <rect x="675" y="202" width="165" height="40" fill="#fafafa" stroke="#bbb"/><text x="757" y="219" text-anchor="middle">NEVI uptime</text><text x="757" y="235" text-anchor="middle">compliance report</text>
+ </g>
+
+ <!-- arrows in -->
+ <g stroke="#111" stroke-width="1.4" marker-end="url(#ar)">
+  <line x1="170" y1="57" x2="233" y2="90"/><line x1="170" y1="103" x2="233" y2="110"/>
+  <line x1="170" y1="149" x2="233" y2="135"/><line x1="170" y1="195" x2="233" y2="158"/>
+  <line x1="365" y1="126" x2="428" y2="126"/>
+ </g>
+ <!-- arrows out -->
+ <g stroke="#111" stroke-width="1.4" marker-end="url(#ar)">
+  <line x1="610" y1="174" x2="673" y2="90"/>
+  <line x1="610" y1="226" x2="673" y2="150"/>
+  <line x1="610" y1="275" x2="673" y2="222"/>
+ </g>
+ <!-- dispatch returns to verify loop hint -->
+ <text x="757" y="300" text-anchor="middle" font-size="10.5" fill="#555">Verify confirms the fix before the loop closes</text>
+</svg>
+</div>
+
+<h2>The cross-vendor adapter strategy</h2>
+<p>The thing that kills a "horizontal" layer is bespoke integration cost. We defuse it with a <b>canonical model</b>: every source is mapped to one internal representation of an asset, a fault, and a restoration event. Adapters are thin and mostly declarative, onboarding a new CPMS or OEM is a mapping config, not a new engine. The core logic (triage, dispatch, verify) is written once against the canonical model and reused across every vendor and asset class.</p>
+
+<h2>Where the AI actually sits</h2>
+<p>Specific jobs, not "AI magic":</p>
+<ul>
+<li><b>Remote diagnosis before dispatch</b>, the single biggest lever on repair time per industry data. Resolve or correctly classify the fault before a truck rolls.</li>
+<li><b>Triage &amp; prioritization</b> against the SLA, deduplicating noisy or duplicate faults across sources.</li>
+<li><b>Dispatch routing</b>, matching the fault to the right qualified actor with the context to fix it first-time.</li>
+<li><b>Verification &amp; anomaly detection</b>, confirming restoration and flagging "closed but not actually fixed."</li>
+<li><b>Evidence summarization</b>, turning the record into a compliance-ready uptime narrative.</li>
+</ul>
+
+<h2>Data &amp; security posture</h2>
+<ul>
+<li><b>Tenant-isolated, operator-owned.</b> Each operator's data is theirs; no cross-operator resale.</li>
+<li><b>Read-mostly ingestion</b> via OCPP and vendor APIs, minimal write-back to systems of record and FSM.</li>
+<li><b>No PII resale.</b> The business model is the coordination layer and the compliance evidence, not data brokerage.</li>
+<li><b>Compliance-grade audit trail</b> with export built for the NEVI reporting fields (see <a href="nevi.html">the NEVI mandate</a>).</li>
+</ul>
+
+<h2>What we deliberately don't build</h2>
+<p>Not a CPMS. Not hardware. Not a labor marketplace. Not a new system of record. Each of those has entrenched players; our value is the coordination seam between them, which no one owns.</p>
+
+<footer>
+Product Architecture · Intelligent Asset Lifecycle Orchestration · October 2026 · Pairs with <a href="product.html">Product Direction</a> and <a href="competitive.html">Competitive</a>. <a href="index.html">Back to the data room</a>
+</footer>
+</main></body></html>

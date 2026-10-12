@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The ROI Model · Intelligent Asset Lifecycle Orchestration</title>
+<meta name="description" content="What a downed charger costs per day, how cutting repair time moves the NEVI uptime number, and the illustrative per-port value stack. Assumption-driven; real numbers come from M6."/>
+<link rel="stylesheet" href="style.css"/>
+<script src="gate.js"></script>
+<script src="nav.js"></script>
+</head><body>
+
+<main>
+<header class="page">
+<div class="eyebrow">The ROI Model</div>
+<h1>What a downed charger costs, and what we save</h1>
+<p class="subtitle">A transparent, assumption-driven model. Every number is a stated placeholder; the real figures come from the M6 baseline capture. The structure, not the digits, is the point.</p>
+</header>
+
+<div class="warn">
+<span class="k2">Read this first</span>
+<p style="margin:0">All dollar and time figures below are <b>illustrative placeholders</b> chosen to show the mechanics. <a href="outreach.html">M6</a> replaces them with each operator's real baselines (time-to-detect, time-to-dispatch, MTTR, touches per incident, uptime vs the 97% SLA).</p>
+</div>
+
+<h2>1 · The cost of one down charger</h2>
+<p>Illustrative public DC fast charger:</p>
+<table>
+<thead><tr><th>Assumption</th><th>Placeholder</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Sessions/day when healthy</td><td>12</td><td rowspan="2"><b>~$120/day</b> gross revenue lost per down charger</td></tr>
+<tr><td>Gross revenue/session</td><td>$10</td></tr>
+<tr><td>Typical slow repair (parts-constrained)</td><td>up to several weeks</td><td>a single long outage can cost <b>$1,500&ndash;2,500+</b></td></tr>
+<tr><td>Plus</td><td colspan="2">driver churn (a broken charger = no charger, drivers don't come back) and NEVI compliance erosion, below</td></tr>
+</tbody></table>
+
+<h2>2 · Repair time is the lever</h2>
+<p>Industry data: best-in-class operators repair in <b>under 5 hours</b>; typical DC fast-charger repairs can stretch to <b>weeks</b> when parts and diagnosis are uncoordinated. <b>Remote diagnosis before dispatch is the single most impactful factor</b> in reducing repair time, exactly the detect&rarr;triage step of our engine. Less time down is simultaneously more revenue <i>and</i> more uptime.</p>
+
+<h2>3 · Downtime &rarr; the NEVI number</h2>
+<p>Using the mandate's own formula (525,600 minutes/year, see <a href="nevi.html">NEVI</a>). To stay above 97%, a port can be down at most <b>~3% of the year = ~10.9 days</b>.</p>
+<table>
+<thead><tr><th>Scenario</th><th>Downtime/yr</th><th>Uptime &mu;</th><th>NEVI 97%?</th></tr></thead>
+<tbody>
+<tr class="out"><td>4 incidents, ~10 days each (slow, uncoordinated)</td><td>40 days</td><td>89.0%</td><td>FAIL</td></tr>
+<tr class="mid"><td>Threshold</td><td>10.9 days</td><td>97.0%</td><td>line</td></tr>
+<tr class="win"><td>Same 4 incidents, ~2 days each (coordinated + remote diagnosis)</td><td>8 days</td><td>98.5%</td><td>PASS</td></tr>
+</tbody></table>
+<p class="small">Cutting mean-time-to-repair from ~10 days to ~2 days per incident takes this port from <b>89% (non-compliant)</b> to <b>98.5% (compliant)</b>, the difference between clawback exposure and a clean report.</p>
+
+<h2>4 · The value stack (per port, per year, illustrative)</h2>
+<div class="grid">
+<div class="cell"><b>Recovered revenue</b><span>32 down-days avoided &times; ~$120/day &asymp; <b>~$3,800</b></span></div>
+<div class="cell"><b>Fewer truck rolls</b><span>Remote diagnosis resolves/triages before dispatch; ~2 avoided rolls &times; ~$250 &asymp; <b>~$500</b></span></div>
+<div class="cell"><b>Compliance risk avoided</b><span>Crossing back over 97% removes remediation / clawback exposure on a funded port (step-change, often $1,000s)</span></div>
+<div class="cell"><b>Reporting labor saved</b><span>Audit-ready uptime evidence produced as a byproduct, not assembled by hand</span></div>
+<div class="cell"><b>Cost of capital</b><span>Provable good-condition record (the flipped data play) supports cheaper financing of the asset base</span></div>
+</div>
+<p>Illustrative hard-dollar value before compliance and cost-of-capital effects: <b>~$4,000&ndash;5,000 per port per year</b>. For a network of even a few hundred ports, that is a seven-figure annual value pool, most of which is currently unaddressed.</p>
+
+<h2>5 · Pricing sanity check</h2>
+<p>Pricing is a separate decision (a known gap), but the model sets the ceiling: if a placeholder price of <b>$200&ndash;600 per port per year</b> captures a fraction of <b>$4,000&ndash;5,000</b> of value, the value-to-price ratio is strongly positive and the budget line (NEVI compliance / O&amp;M) already exists. That is a painkiller, not a vitamin.</p>
+
+<div class="box"><b>Next:</b> M6 Test 4 captures the real $/day and penalty exposure per operator, and the baseline MTTR, so this model stops being illustrative and becomes each prospect's own business case.</div>
+
+<footer>
+The ROI Model · Intelligent Asset Lifecycle Orchestration · October 2026 · All figures illustrative. Built on <a href="nevi.html">the NEVI mandate</a> and validated by <a href="outreach.html">M6</a>. <a href="index.html">Back to the data room</a>
+</footer>
+</main></body></html>

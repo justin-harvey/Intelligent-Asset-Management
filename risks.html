@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Risk Register · Intelligent Asset Lifecycle Orchestration</title>
+<meta name="description" content="An honest register of what could kill this, with likelihood/impact and the mitigation for each: CPMS encroachment, RaaS capture, TAM ceiling, NEVI rollback, integration sprawl, and more."/>
+<link rel="stylesheet" href="style.css"/>
+<script src="gate.js"></script>
+<script src="nav.js"></script>
+</head><body>
+
+<main>
+<header class="page">
+<div class="eyebrow">Risk Register</div>
+<h1>What could kill this, and what we do about it</h1>
+<p class="subtitle">An honest list. Each risk carries a likelihood/impact read and a concrete mitigation. Several of these also point at the eventual exit.</p>
+</header>
+
+<h2>The register</h2>
+<table>
+<thead><tr><th>Risk</th><th>L / I</th><th>Why it's real</th><th>Mitigation</th></tr></thead>
+<tbody>
+<tr class="out">
+<td><b>CPMS vendors own the dispatch loop</b></td><td>High / High</td>
+<td>AMPECO CoOperator and ChargeLab Spark are moving the CPMS layer into automated ops, the most credible path to our seam.</td>
+<td>Win the mixed-hardware, multi-CPMS long tail no single platform spans; stay vendor-neutral and operator-owned; integrate with CoOperator/Spark as sources; extend cross-asset (ports) where no charging CPMS follows.</td>
+</tr>
+<tr class="out">
+<td><b>RaaS captures maintenance</b></td><td>Med / High</td>
+<td>ChargerHelp bundles platform + field techs; the M2 analysis flags RaaS/OEM capture as the dominant kill-risk for the whole category.</td>
+<td>Be the coordinator, not the labor, labor-agnostic across the operator's crews and any vendor (ChargerHelp included); cross-asset reach RaaS won't travel to; position them as partner/acquirer, not just rival.</td>
+</tr>
+<tr class="mid">
+<td><b>TAM ceiling in EV charging</b></td><td>Med / Med</td>
+<td>Smaller absolute market than data centers or grid (flagged in M1).</td>
+<td>EV charging is the wedge, not the destination; prove the cross-vendor engine, then expand (ports, grid-DER, mixed-fleet). Test the expansion path early with CPO interviews.</td>
+</tr>
+<tr class="mid">
+<td><b>NEVI political / regulatory rollback</b></td><td>Med / High</td>
+<td>A funded mandate is a policy artifact; appropriations and rules can change.</td>
+<td>The reliability problem is real beyond the subsidy (driver experience, lost revenue, fleet SLAs); private and fleet demand stands alone; the ports beachhead is NEVI-independent; don't over-index the pitch on the mandate.</td>
+</tr>
+<tr class="mid">
+<td><b>Integration sprawl (the "trenchcoat")</b></td><td>Med / High</td>
+<td>A cross-vendor layer can degenerate into N bespoke integrations that never scale.</td>
+<td>Canonical asset/fault model with thin, config-driven adapters (see <a href="architecture.html">Architecture</a>); refuse one-off custom work until the core generalizes; onboarding is mapping, not code.</td>
+</tr>
+<tr class="mid">
+<td><b>Data access / OCPP limits</b></td><td>Med / Med</td>
+<td>A CPMS may not expose enough fault/telemetry detail to coordinate well.</td>
+<td>Lean on the OCPP standard and read-mostly ingestion; build priority vendor integrations; and the operator <i>owns</i> the data, they can require access in their vendor contracts.</td>
+</tr>
+<tr class="mid">
+<td><b>Design-partner / reference concentration</b></td><td>Med / Med</td>
+<td>The ports proof rests on a single terminal via direct access.</td>
+<td>Treat ports as the proving ground, not the market; run the EV-charging commercial path in parallel; don't let one logo gate the roadmap.</td>
+</tr>
+<tr class="mid">
+<td><b>EAM incumbent builds the layer</b></td><td>Low / High</td>
+<td>IFS (Copperleaf), Hexagon et al. are assembling "end-to-end asset lifecycle."</td>
+<td>This is also the exit: being the best-in-class vertical layer makes us the <i>buy</i>, not the build. Compete on speed and vertical depth they can't match from a horizontal base.</td>
+</tr>
+<tr class="mid">
+<td><b>Long sales cycle / unclear buyer</b></td><td>Med / Med</td>
+<td>Infrastructure software can face diffuse buying.</td>
+<td>NEVI names the budget owner (compliance/O&amp;M); M6 Test 2 validates a signer and an existing line before we build.</td>
+</tr>
+</tbody></table>
+
+<h2>The one that would actually stop us</h2>
+<div class="box">
+<p style="margin:0">If forced to name a single kill condition: <b>a dominant CPMS makes vendor-neutral, cross-estate coordination unnecessary</b>, either by consolidating the market so "mixed hardware across vendors" stops being common, or by opening a genuinely neutral cross-CPMS layer themselves. We watch for both. Today the market is fragmenting (more operators, more hardware, more CPMS vendors), which cuts the other way, and no CPMS has any incentive to coordinate a <i>rival's</i> chargers or a port's cranes. That asymmetry is the moat.</p>
+</div>
+
+<footer>
+Risk Register · Intelligent Asset Lifecycle Orchestration · October 2026 · Mitigations draw on <a href="architecture.html">Architecture</a>, <a href="competitive.html">Competitive</a>, and <a href="exit.html">Exit</a>. <a href="index.html">Back to the data room</a>
+</footer>
+</main></body></html>

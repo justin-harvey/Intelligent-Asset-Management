@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The NEVI Uptime Mandate · Intelligent Asset Lifecycle Orchestration</title>
+<meta name="description" content="The 97% uptime rule in detail: what counts as up, the trailing-12-month formula, the reporting burden, the 5-year obligation, and why it funds our demand."/>
+<link rel="stylesheet" href="style.css"/>
+<script src="gate.js"></script>
+<script src="nav.js"></script>
+</head><body>
+
+<main>
+<header class="page">
+<div class="eyebrow">The Funded Driver</div>
+<h1>The NEVI uptime mandate, in detail</h1>
+<p class="subtitle">Our whole demand thesis rests on one federal rule. Here is exactly what it requires, how it is measured, and why it converts "maintenance" into a funded compliance obligation.</p>
+</header>
+
+<div class="verdict">
+<span class="k">The rule in one line</span>
+<p>Each federally funded charging port must maintain an <b>average annual uptime above 97%</b>, calculated monthly on a trailing-12-month basis, under <b>23 CFR 680.116(b)</b> (final rule, Federal Register, 28 Feb 2023). The obligation runs for <b>5 years</b> of operation.</p>
+</div>
+
+<h2>What counts as "up"</h2>
+<p>A port is "up" only when <b>its hardware and software are online and available for use (or in use) AND it actually dispenses electricity at the required minimum power level.</b> A charger that powers on but won't deliver a charge is counted as <i>down</i>. That definition is the point: it makes <b>successful restoration</b>, not "we reset it," the thing that matters, which is exactly what our verify step confirms.</p>
+
+<h2>How uptime is calculated</h2>
+<div class="box" style="text-align:center;font-size:17px">
+&mu; = ( ( 525,600 &minus; ( T<sub>outage</sub> &minus; T<sub>excluded</sub> ) ) / 525,600 ) &times; 100
+</div>
+<ul>
+<li><b>525,600</b> = minutes in a year (the denominator).</li>
+<li><b>T<sub>outage</sub></b> = total minutes the port was down.</li>
+<li><b>T<sub>excluded</sub></b> = minutes excused under the rule (outages outside the operator's control, per the defined exclusions).</li>
+</ul>
+<p>To allow verification, FHWA requires reporting <b>both</b> underlying fields, T<sub>outage</sub> and T<sub>excluded</sub>, in addition to the uptime metric itself. In other words, you must show your work.</p>
+
+<h2>The reporting burden (which is itself a product surface)</h2>
+<p>Chargers and networks must securely measure, communicate, store, and report:</p>
+<ul>
+<li>Energy and power dispensed</li>
+<li>Real-time charging-port status</li>
+<li>Real-time price to the customer</li>
+<li>Historical charging-port uptime (with T<sub>outage</sub> / T<sub>excluded</sub>)</li>
+</ul>
+<p class="small">Assembling defensible, audit-ready uptime evidence across mixed hardware is a chore operators do today by hand. Our evidence ledger produces it as a byproduct of coordinating the repair.</p>
+
+<h2>Enforcement and the 5-year obligation</h2>
+<p>NEVI requires operation and maintenance to standard for <b>5 years</b>. Enforcement flows through the <b>state subrecipient agreements</b>, not a flat federal fine: states can require remediation, withhold or claw back funds, and condition future awards on compliance.</p>
+<div class="warn">
+<span class="k2">Honest note on "penalties"</span>
+<p style="margin:0">The federal rule sets the <i>requirement</i>; it does not publish a universal dollar penalty. The real exposure is state-by-state, remediation demands, funding clawback, and reputational/award risk, plus the lost revenue of a dead charger. We should quantify the specific state's mechanism with each operator in validation (see <a href="outreach.html">M6, Test 4</a>), not assert a single national number.</p>
+</div>
+
+<h2>Why this funds us</h2>
+<div class="good">
+<span class="k2">The mandate hands us three things at once</span>
+<ul style="margin-bottom:0">
+<li><b>A funded budget line</b>, uptime is now a compliance obligation with money behind it, not a nice-to-have.</li>
+<li><b>A named owner</b>, someone is accountable for the 97% number (our economic buyer).</li>
+<li><b>A measurable target and a reporting requirement</b> we can satisfy as a byproduct.</li>
+</ul>
+</div>
+<p>And the gap is wide open: hitting 97% needs an O&amp;M/coordination layer the CPMS doesn't provide, while real-world first-time charging success sits around <b>71%</b> (roughly one attempt in three fails). The mandate is the demand; the reliability gap is the problem; no incumbent maintenance system exists to close it.</p>
+
+<h2>Sources</h2>
+<ul class="small">
+<li><a href="https://www.law.cornell.edu/cfr/text/23/680.116">23 CFR &sect; 680.116</a>: uptime, data, mapping requirements</li>
+<li><a href="https://www.federalregister.gov/documents/2023/02/28/2023-03500/national-electric-vehicle-infrastructure-standards-and-requirements">Federal Register, NEVI Standards and Requirements (final rule, 2023)</a></li>
+<li><a href="https://tealcom.io/post/reliability-redefined-inside-nevis-97-uptime-mandate-for-ev-chargers/">Reliability Redefined: inside NEVI's 97% uptime mandate</a></li>
+<li><a href="https://www.zest.uk.com/news/ev-charging-reliability-in-2026-what-the-data-really-shows">EV charging reliability in 2026, what the data shows</a> (first-time-success figures)</li>
+</ul>
+
+<footer>
+The NEVI Uptime Mandate · Intelligent Asset Lifecycle Orchestration · October 2026 · Feeds <a href="roi.html">the ROI model</a> and <a href="market.html">the market thesis</a>. <a href="index.html">Back to the data room</a>
+</footer>
+</main></body></html>

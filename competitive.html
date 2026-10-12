@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Competitive Teardown · Intelligent Asset Lifecycle Orchestration</title>
+<meta name="description" content="Where we sit in the EV-charging stack, a head-to-head against CPMS platforms, field-service/RaaS, and EAM incumbents, and why we win the coordination seam."/>
+<link rel="stylesheet" href="style.css"/>
+<script src="gate.js"></script>
+<script src="nav.js"></script>
+</head><body>
+
+<main>
+<header class="page">
+<div class="eyebrow">Competitive Teardown</div>
+<h1>Who else is in the loop, and why we win</h1>
+<p class="subtitle">The EV-charging stack already has a management layer, a repair layer, and a system of record. None of them closes the loop between "charger down" and "charger verified repaired" across vendors. That seam is the product.</p>
+</header>
+
+<div class="verdict">
+<span class="k">The seam, confirmed by the market</span>
+<p>Industry analysts in 2026 are explicit: operators "need O&amp;M tools, not just a CPMS, to hit 97%," and the smartest operators now "layer specialized field-service management beneath their CPMS to close the gap between 'charger offline' and 'charger repaired.'" We are that layer, made <b>cross-vendor, operator-owned, and cross-asset</b>, so it also spans a port estate, not just one charging network.</p>
+</div>
+
+<h2>The stack, and where we sit</h2>
+<table>
+<thead><tr><th>Layer</th><th>What it does</th><th>Representative players</th></tr></thead>
+<tbody>
+<tr><td><b>CPMS / network management</b></td><td>Sessions, billing, roaming, remote status. Tells you a charger is <i>down</i>.</td><td>AMPECO, ChargeLab, Driivz (Vontier), ChargePoint, Siemens</td></tr>
+<tr class="win"><td><b>Coordination layer (us)</b></td><td>Turns a fault signal into a <i>verified</i> repair across vendors and asset classes. Detect → triage → dispatch → verify → record.</td><td><b>Open seam</b></td></tr>
+<tr><td><b>Field service / O&amp;M</b></td><td>Dispatches and performs the repair.</td><td>ChargerHelp (RaaS), generic FSM (ServiceTitan, Salesforce FS), EV-specific FSM</td></tr>
+<tr><td><b>EAM / CMMS (system of record)</b></td><td>Stores the asset record and work history.</td><td>IBM Maximo, SAP, Fiix</td></tr>
+</tbody></table>
+<p class="small">We sit <b>above</b> the systems of record and <b>across</b> the single-network tools, integrating with all of them rather than replacing any.</p>
+
+<h2>Head-to-head</h2>
+<table>
+<thead><tr><th>Category</th><th>Who</th><th>What they do well</th><th>The gap we fill</th></tr></thead>
+<tbody>
+<tr><td><b>CPMS platforms</b></td><td>AMPECO (190+ operators, 70+ countries), ChargeLab (OCPP-agnostic), Driivz (EVgo, 160k+ ports)</td><td>Run the network: sessions, billing, roaming, remote visibility, dynamic power</td><td>Each manages <i>its own</i> network/customers. They surface "down"; they don't coordinate the cross-vendor repair-to-verified-restoration loop, and stop at the charger</td></tr>
+<tr><td><b>CPMS + agentic ops</b></td><td>AMPECO CoOperator (Mar 2026), ChargeLab Spark (Apr 2026)</td><td>Automating network operations with AI agents, inside their platform</td><td>Single-CPMS and single-network. An operator running mixed hardware across CPMS vendors still has no layer that spans them, let alone the rest of the estate</td></tr>
+<tr><td><b>Field service / RaaS</b></td><td>ChargerHelp (Reliability-as-a-Service + EMPWR), FSM suites</td><td>Actually fix chargers; techs + platform; strong on the repair itself</td><td>RaaS <i>owns</i> the labor and bundles it, which captures one network's loop. We are labor-agnostic: we coordinate the operator's own crews and <i>any</i> vendor, across networks and asset classes</td></tr>
+<tr><td><b>EAM / CMMS</b></td><td>Maximo, SAP, Fiix</td><td>System of record; work orders; audit trail</td><td>Store data, don't coordinate the live fix across vendors; not EV- or NEVI-native; slow to deploy</td></tr>
+<tr><td><b>OEM / asset monitoring</b></td><td>Konecranes TRUCONNECT (ports), charger-OEM telemetry</td><td>Deep condition data on <i>their own</i> equipment</td><td>Single-OEM by design. A real estate spans multiple OEMs + asset classes no single tool covers, exactly our cross-vendor thesis</td></tr>
+</tbody></table>
+
+<h2>The two real threats, and why we still win</h2>
+
+<div class="warn">
+<span class="k2">Threat 1: CPMS vendors move into automated ops</span>
+<p>AMPECO's CoOperator and ChargeLab's Spark show the CPMS layer is adding AI operations. This is the most credible path to our seam.</p>
+<p style="margin-bottom:0"><b>Why we win:</b> each optimizes its <i>own</i> network. Our wedge is the long-tail and mixed-hardware operator who runs chargers across several CPMS vendors, where no single platform spans them, and the coordination layer must be vendor-neutral and operator-owned. And we don't stop at chargers, the same engine coordinates a port estate (cranes, rail, utilities), which no charging CPMS will ever do. We integrate with CoOperator/Spark as sources, not compete inside one network.</p>
+</div>
+
+<div class="warn">
+<span class="k2">Threat 2: ChargerHelp and the RaaS model</span>
+<p>ChargerHelp is the closest thing to us: reliability-focused, platform + field techs. But it is <b>Reliability-as-a-Service</b>, it owns and sells the labor.</p>
+<p style="margin-bottom:0"><b>Why we win (and why it may be a partner/acquirer):</b> our M2 analysis holds, bundling the labor captures one operator's loop and doesn't travel cross-estate. We are the <i>coordinator</i>, not the labor pool: we orchestrate the operator's own crews and any vendor, including ChargerHelp as one fulfillment option. That keeps us labor-light, cross-network, and cross-asset. A RaaS player wanting a vendor-neutral software layer is a natural partner, and a plausible acquirer.</p>
+</div>
+
+<h2>Our defensible position</h2>
+<div class="good">
+<span class="k2">One line</span>
+<p>The <b>vendor-neutral, operator-owned coordination layer</b> that turns "a charger is down" into "the asset is verified repaired," across every CPMS, every field crew, and, uniquely, every asset class, closing the O&amp;M seam the industry says the CPMS can't. Sold as vertical SaaS, integrating with the stack rather than replacing it.</p>
+</div>
+<p>Defensibility compounds three ways: <b>(1)</b> the cross-vendor canonical model and adapters (hard to replicate, see <a href="architecture.html">Architecture</a>); <b>(2)</b> the operator-owned, compounding record of <i>verified good condition</i> (the flipped data play); <b>(3)</b> cross-asset reach that no single-network or single-OEM player will follow us into.</p>
+
+<footer>
+Competitive Teardown · Intelligent Asset Lifecycle Orchestration · October 2026 · Competitor facts from public sources (Oct 2026), directional. See <a href="market.html">Market</a> and <a href="architecture.html">Architecture</a>. <a href="index.html">Back to the data room</a>
+</footer>
+</main></body></html>
