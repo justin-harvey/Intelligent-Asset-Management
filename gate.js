@@ -30,7 +30,8 @@
       "display:flex;align-items:center;justify-content:center;" +
       "font-family:Arial,Helvetica,sans-serif");
     g.innerHTML =
-      '<form id="dr-form" style="width:320px;max-width:86vw;text-align:left">' +
+      '<canvas id="dr-particles" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0"></canvas>' +
+      '<form id="dr-form" style="position:relative;z-index:1;width:320px;max-width:86vw;text-align:left">' +
       '<div style="font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:#bbb;margin-bottom:10px">Confidential · Data Room</div>' +
       '<div style="font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:18px">Intelligent Asset Lifecycle Orchestration</div>' +
       '<input id="dr-pw" type="password" autocomplete="off" placeholder="Access code" ' +
@@ -39,6 +40,16 @@
       '<div id="dr-err" style="color:#e07a7a;font-size:12.5px;margin-top:10px;min-height:16px"></div>' +
       '</form>';
     document.body.appendChild(g);
+
+    // Animated particle-drift background (degrades gracefully if unavailable).
+    var stopParticles = function () {};
+    if (window.ParticleDrift && window.ParticleDrift.mount) {
+      stopParticles = window.ParticleDrift.mount(g.querySelector("#dr-particles"), {
+        base: "#ffffff", accent: "#9db4d6", density: 130, dotSize: 2.2,
+        speed: 32, direction: 25, hover: 70, linkDistance: 130, linkThickness: 1.1, restAlpha: 0.38
+      });
+    }
+
     var pw = g.querySelector("#dr-pw");
     var err = g.querySelector("#dr-err");
     pw.focus();
@@ -49,6 +60,7 @@
           sessionStorage.setItem(KEY, "1");
           var s = document.getElementById("dr-gate-hide");
           if (s) s.remove();
+          stopParticles();
           g.remove();
         } else {
           err.textContent = "Incorrect code.";
