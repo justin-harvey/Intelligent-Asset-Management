@@ -19,7 +19,7 @@ Pages, grouped as on the home index:
 - **Business & GTM:** financials, gtm, exit, risks, team
 - **Validation & outreach:** outreach, M6 scorecard
 - **Read & reference:** executive-brief, one-pager, glossary
-- **Evidence appendix:** research/ (the five M1–M6 working docs)
+- **Evidence appendix:** research/ (the six M1–M7 working docs)
 
 Live assets:
 - **Gate:** `gate.js` client-side password overlay (code `6942069`, stored as a SHA-256
