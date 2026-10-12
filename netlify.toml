@@ -1,5 +1,7 @@
 # Static data room — no build step.
+# base = "/" pins the repo root and overrides any base directory set in the Netlify UI.
 [build]
+  base = "/"
   publish = "."
 
 # Keep the data room out of search engines.
