@@ -69,7 +69,7 @@ footer{border-top:2px solid #111;margin-top:56px;padding-top:18px;color:#555;fon
 footer a{color:#555}
 
 @media print{
-  nav.site{display:none}
+  nav.site,#dr-nav{display:none}
   main{padding:16px 10px}
   h2,table,.verdict,.box,.good,.warn,.door{break-inside:avoid}
   thead th,.verdict,.door:hover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
