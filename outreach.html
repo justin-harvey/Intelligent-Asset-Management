@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Outreach &amp; Validation — Intelligent Asset Lifecycle Orchestration</title>
+<meta name="description" content="The M6 validation playbook plus ready-to-send outreach scripts for CPOs and terminal operators, target sourcing, and a tracker."/>
+<link rel="stylesheet" href="style.css"/>
+</head><body>
+
+<nav class="site"><div class="wrap">
+<a class="brand" href="index.html">Asset Lifecycle Orchestration</a>
+<a href="product.html">Product</a>
+<a href="market.html">Market</a>
+<a href="exit.html">Exit</a>
+<a class="here" href="outreach.html">Outreach</a>
+<a href="executive-brief.html">Brief</a>
+</div></nav>
+
+<main>
+<header class="page">
+<div class="eyebrow">Outreach &amp; Validation · M6</div>
+<h1>Prove it before you build it</h1>
+<p class="subtitle">The five falsifiable tests, who to run them with, and ready-to-send scripts. Run all five before writing production code.</p>
+</header>
+
+<div class="verdict">
+<span class="k">The ask, in one line</span>
+<p>Talk to <b>5 unaffiliated CPOs</b> and <b>1 terminal operator</b>. Confirm reliability/dispatch is a top-3, funded, incumbent-can't-solve problem — then build the one narrow workflow. If Test 1 fails, drop to the next survivor (ports-first, then energy/grid) rather than abandoning the project.</p>
+</div>
+
+<h2>Who to talk to</h2>
+<ul>
+<li><b>5 CPOs</b> that are <i>not</i> affiliated with us and <i>not</i> closed networks — regional/independent networks, fleet-depot operators, retail/site-host operators running mixed hardware.</li>
+<li><b>1 terminal operator</b> for the ports beachhead — the design-partner candidate (direct access).</li>
+</ul>
+
+<h2>The five tests</h2>
+<table>
+<thead><tr><th>#</th><th>Test</th><th>Ask (verbatim-ish)</th><th>PASS bar</th><th>FAIL =</th></tr></thead>
+<tbody>
+<tr><td><b>1</b></td><td>Second-customer</td><td>"What are your top 3 operational headaches? Where does charger reliability / maintenance dispatch rank?"</td><td>≥3 of 5 name reliability/dispatch as top-3, <i>unprompted</i></td><td>a consulting gig (N=1)</td></tr>
+<tr><td><b>2</b></td><td>Budget-line</td><td>"Who signs for uptime/reliability tooling, and what line does it come from — NEVI compliance, O&amp;M, network ops?"</td><td>named signer + existing line item</td><td>a user, not a buyer</td></tr>
+<tr><td><b>3</b></td><td>Incumbent gap</td><td>"What does your CMS/Maximo <i>not</i> do when a unit goes down across mixed hardware?"</td><td>one sentence it structurally can't do (cross-vendor dispatch + verified restoration)</td><td>"do it better with AI" = a feature</td></tr>
+<tr><td><b>4</b></td><td>Painkiller</td><td>"What does one downed charger cost you per day — lost sessions + NEVI penalty risk + driver churn?"</td><td>quantified $/day + penalty exposure</td><td>a vitamin</td></tr>
+<tr><td><b>5</b></td><td>Data consent (flipped)</td><td>"Would you want verified uptime/condition evidence you <i>control</i>, to prove NEVI compliance / lower your own cost of capital?"</td><td>appetite for operator-controlled proof of good condition</td><td>capital-markets thesis must be re-architected</td></tr>
+</tbody></table>
+<div class="box"><b>Decision rule:</b> commit to build only if <b>Tests 1–4 pass</b> for EV charging and Test 5 shows a viable path (even if the original adverse-data thesis dies).</div>
+
+<h2>Baselines to capture (for the later ROI claim)</h2>
+<p>In every call, get numbers on: time-to-detection · time-to-dispatch · mean-time-to-repair · human touches per incident · % uptime vs the 97% SLA · evidence completeness for compliance reporting. These become the before/after in the Y2 "it moves the uptime number" proof.</p>
+
+<h2>Where to source five unaffiliated CPOs</h2>
+<ul>
+<li><b>NEVI awardee lists</b> — state DOT NEVI program pages publish awarded operators; the long tail (not Tesla/EVgo) is exactly the target.</li>
+<li><b>Fleet-depot operators</b> — transit agencies, school-bus and municipal fleets electrifying depots; reliability is existential for them.</li>
+<li><b>Retail/site-host networks</b> — grocery, travel-center and hospitality operators running mixed hardware across sites.</li>
+<li><b>Industry rooms</b> — SEPA, EV charging reliability working groups, and reliability-focused threads (Paren, EVChargerScout) surface operators publicly complaining about uptime.</li>
+<li><b>LinkedIn title search</b> — "Head of Reliability / VP Operations / Director of Network Operations" at CPOs outside the big three.</li>
+</ul>
+
+<h2>Outreach scripts</h2>
+
+<h3>1 · CPO cold email (validation interview, not a pitch)</h3>
+<pre class="script">Subject: 30 min on charger uptime — comparing notes, not selling
+
+Hi [First name],
+
+I'm researching how CPOs are actually hitting the NEVI 97% uptime
+bar — specifically the maintenance-dispatch side when a unit goes
+down across mixed hardware.
+
+I'm not selling anything. I'm talking to a handful of operators to
+pressure-test what's genuinely broken vs. what the CMS vendors claim
+they've solved. In exchange I'll share what I'm hearing across the
+other operators (anonymized) — it's turned out to be useful to the
+folks I've spoken with.
+
+Would 25-30 minutes in the next week or two be worth it? Happy to
+work around your schedule.
+
+[Your name]
+[one-line credibility: who you are / why this]</pre>
+<p class="small"><b>Why it works:</b> leads with their problem and the funded mandate, explicitly disclaims a pitch (raises reply rate), and offers a cross-operator insight trade as the incentive.</p>
+
+<h3>2 · LinkedIn opener (shorter)</h3>
+<pre class="script">Hi [First name] — researching how independent CPOs are hitting NEVI
+97% uptime, mostly the dispatch-and-verify side across mixed hardware.
+Not selling; trading notes with a few operators. Worth 25 min?</pre>
+
+<h3>3 · Terminal operator — design-partner ask</h3>
+<pre class="script">Subject: Design partner — cross-OEM maintenance coordination at [Terminal]
+
+Hi [First name],
+
+Quick one. Terminals run cranes, rail, pavement and utilities from
+different OEMs, and the single-vendor monitoring tools (TRUCONNECT
+and the like) only see their own equipment. The coordination across
+all of it — detect, dispatch the right crew, verify it's actually
+fixed — still falls on your team.
+
+We're building the layer that coordinates that across vendors and
+asset classes, and we're looking for one terminal to build it with
+as a design partner — your real problems shape the product, you get
+it first, no cost during the build.
+
+Could we grab 30 minutes to see if the fit is there?
+
+[Your name]</pre>
+<p class="small"><b>Why it works:</b> names the exact cross-OEM/cross-asset gap (the break-point finding), frames a design partnership (free during build, first access) rather than a sale, and asks for a single low-commitment call.</p>
+
+<h2>Interview tracker</h2>
+<p class="small">Log every conversation against the five tests. Pattern across the five CPOs is the deliverable — not any single call.</p>
+<table>
+<thead><tr><th>Operator</th><th>Type</th><th>T1 pain</th><th>T2 budget</th><th>T3 gap</th><th>T4 $/day</th><th>T5 data</th><th>Notes / baselines</th></tr></thead>
+<tbody>
+<tr><td>CPO 1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CPO 2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CPO 3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CPO 4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CPO 5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Terminal</td><td>Ports</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<p class="small">Scoring per cell: ✓ pass · ~ partial · ✗ fail. Gate: ≥3 of 5 CPOs ✓ on T1, and Tests 1–4 ✓ overall → build.</p>
+
+<footer>
+Outreach &amp; Validation (M6) · Intelligent Asset Lifecycle Orchestration · October 2026 · Full playbook in the <a href="research/M5-M6-BACKCAST-AND-VALIDATION.md">M5+M6 working doc</a>. <a href="index.html">Back to the data room</a>
+</footer>
+</main></body></html>

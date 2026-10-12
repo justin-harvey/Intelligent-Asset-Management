@@ -1,0 +1,9 @@
+# Static data room — no build step.
+[build]
+  publish = "."
+
+# Keep the data room out of search engines.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
