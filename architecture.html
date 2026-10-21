@@ -7,6 +7,7 @@
 <script src="particle-drift.js"></script>
 <script src="gate.js"></script>
 <script src="nav.js"></script>
+<script src="tips.js"></script>
 </head><body>
 
 <main>
@@ -91,7 +92,8 @@
 </svg>
 </div>
 
-<h2>The cross-vendor adapter strategy</h2>
+<h2>How we handle every brand without drowning in custom work</h2>
+<p class="plain"><b>Plain English</b> Every brand of equipment "speaks" differently. Instead of writing custom code for each one, we translate them all into a single shared language the moment their data comes in. After that, everything we build works for every brand automatically. Adding a new brand is like adding a dictionary entry, not rebuilding the software.</p>
 <p>The thing that kills a "horizontal" layer is bespoke integration cost. We defuse it with a <b>canonical model</b>: every source is mapped to one internal representation of an asset, a fault, and a restoration event. Adapters are thin and mostly declarative, onboarding a new CPMS or OEM is a mapping config, not a new engine. The core logic (triage, dispatch, verify) is written once against the canonical model and reused across every vendor and asset class.</p>
 
 <h2>Where the AI actually sits</h2>
@@ -105,6 +107,7 @@
 </ul>
 
 <h2>Data &amp; security posture</h2>
+<p class="plain"><b>Plain English</b> Each customer's data is walled off and stays theirs; we never sell it or mix it with anyone else's. We mostly just read equipment status and write back as little as possible. We don't collect or sell personal information, we make money from the coordination and the compliance records, not from data.</p>
 <ul>
 <li><b>Tenant-isolated, operator-owned.</b> Each operator's data is theirs; no cross-operator resale.</li>
 <li><b>Read-mostly ingestion</b> via OCPP and vendor APIs, minimal write-back to systems of record and FSM.</li>

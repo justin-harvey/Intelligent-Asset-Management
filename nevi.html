@@ -7,6 +7,7 @@
 <script src="particle-drift.js"></script>
 <script src="gate.js"></script>
 <script src="nav.js"></script>
+<script src="tips.js"></script>
 </head><body>
 
 <main>
@@ -25,6 +26,7 @@
 <p>A port is "up" only when <b>its hardware and software are online and available for use (or in use) AND it actually dispenses electricity at the required minimum power level.</b> A charger that powers on but won't deliver a charge is counted as <i>down</i>. That definition is the point: it makes <b>successful restoration</b>, not "we reset it," the thing that matters, which is exactly what our verify step confirms.</p>
 
 <h2>How uptime is calculated</h2>
+<p class="plain"><b>Plain English</b> Take the whole year, subtract the minutes a charger was broken (not counting outages that weren't the operator's fault), and that's its uptime. To clear 97%, a charger can be dead at most about 11 days a year. The formula just puts numbers to that.</p>
 <div class="box" style="text-align:center;font-size:17px">
 &mu; = ( ( 525,600 &minus; ( T<sub>outage</sub> &minus; T<sub>excluded</sub> ) ) / 525,600 ) &times; 100
 </div>
