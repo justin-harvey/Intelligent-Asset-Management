@@ -45,7 +45,14 @@
     "land-and-expand": "A sales strategy: win a small first deal, prove it works, then grow the account by selling more over time.",
     "cost of capital": "How expensive it is for a company to borrow money or raise investment. A solid track record lowers it.",
     "system of record": "The official master database a company treats as the single source of truth.",
-    "flipped data play": "Our twist on data: instead of selling customers' data, we help them prove their equipment is in good shape so they can borrow money more cheaply."
+    "flipped data play": "Our twist on data: instead of selling customers' data, we help them prove their equipment is in good shape so they can borrow money more cheaply.",
+    "preventive maintenance": "Servicing equipment on a schedule to stop breakdowns before they happen, the opposite of waiting for it to fail.",
+    "reactive maintenance": "Fixing equipment only after it breaks. Cheaper to ignore day to day, far more expensive when something fails.",
+    "telematics": "Equipment that reports its own data (hours run, faults, location) back over a network.",
+    "telemetry": "Automatic readings a machine sends about its own condition and usage.",
+    "quay crane": "The giant dockside crane that lifts shipping containers on and off a vessel.",
+    "work order": "A tracked instruction to do a specific repair or maintenance job.",
+    "SMRP": "Society for Maintenance & Reliability Professionals, an industry body whose targets are used as a best-practice yardstick."
   };
 
   // Longer phrases first so "AI-native" wins over "AI", "CPMS" over nothing, etc.

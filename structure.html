@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Product Structure · Intelligent Asset Lifecycle Orchestration</title>
+<meta name="description" content="How the port-terminal MVP is organized around the signals a terminal actually produces: six input layers feeding one coordination core, read through four surfaces, phased by integration cost."/>
+<link rel="stylesheet" href="style.css"/>
+<script src="particle-drift.js"></script>
+<script src="gate.js"></script>
+<script src="nav.js"></script>
+<script src="tips.js"></script>
+</head><body>
+
+<main>
+<header class="page">
+<div class="eyebrow">Product Structure · Port Terminal MVP</div>
+<h1>How the app is built around a terminal's signals</h1>
+<p class="subtitle">One coordination core, fed by six kinds of input and read through four screens. Every input, a fault code, an invoice, a voicemail, a photo, becomes the same kind of record.</p>
+</header>
+
+<div class="plain"><b>Plain English</b> A busy port spits out information in a dozen messy forms: sensor alarms, paper sign-off sheets, texts, photos on a worker's phone. This app turns all of it into one standard "something needs attention" note, decides what matters, gets the repair approved, and only marks it done once there's proof the fix actually happened.</div>
+
+<h2>Overview</h2>
+<p>The app is one coordination core fed by <b>six input layers</b> and read through <b>four surfaces</b>. Every input becomes the same signal record, so the core can triage it, gate approval, and verify the fix the same way no matter where it came from.</p>
+<p>Watching screens and camera views is just one generic input layer, not the centerpiece. Seed data from the facility's prior maintenance plan, its older maintenance tracker, and its vendor list, plus a cost baseline from the historical expense workbooks, gives version 1 something real to run on from day one.</p>
+<div class="good"><span class="k2">The one rule</span><p style="margin:0">Every layer lands in signal intake first. Only the coordination core creates, approves, and closes work.</p></div>
+
+<h2>The six input layers</h2>
+<p>Two layers, back office and field reports, need no vendor integrations, so they carry version 1.</p>
+<table>
+<thead><tr><th>Layer</th><th>Where it comes from</th><th>What it yields</th><th>Phase</th></tr></thead>
+<tbody>
+<tr><td><b>Machine telemetry</b></td><td>Equipment-maker telematics portals, on-board diagnostic fault codes, crane control-system data, refrigeration and generator controllers</td><td>Fault codes, engine hours, load cycles</td><td>v3</td></tr>
+<tr><td><b>Facility systems</b></td><td>Access control, the camera and video system, refrigerated-container power pedestals, fire panel, HVAC systems, automated gates</td><td>Device online/offline status, alarms, power faults</td><td>v2</td></tr>
+<tr><td><b>Operations context</b></td><td>Terminal operating system move counts, vessel and rail schedules, weather and tides</td><td>Usage-based maintenance triggers and maintenance windows</td><td>v2</td></tr>
+<tr class="win"><td><b>Back office</b></td><td>Vendor invoices and quotes, purchase orders, fuel slips, budget sheets, vendor list</td><td>Cost per asset, engine hours, vendor performance</td><td>v1</td></tr>
+<tr><td><b>Observation harness</b></td><td>Any screen or physical indicator with no digital feed: equipment cab displays, alarm panels, dashboard lamps, legacy app windows, light fixtures</td><td>State-change events from things nobody connected</td><td>v2</td></tr>
+<tr class="win"><td><b>Field reports</b></td><td>People and their phones (next section)</td><td>Defects, checklists, evidence, verification</td><td>v1</td></tr>
+</tbody></table>
+<p>Operations context is the underrated layer. A prior facility maintenance plan required the yard cleared before vessel operations and certain water lines drained before a freeze. Weather and the vessel schedule turn those notes into automatic triggers and "don't dispatch now" windows.</p>
+<p>The observation harness is one generic pattern: point it at a screen region or a camera view, define what normal looks like, and report when the state changes. A dark light fixture, a red lamp on an equipment panel, and a card reader dropping offline in the access-control system are the same adapter with a different configuration.</p>
+
+<h2>Field reports: the creative channels</h2>
+<p>These channels need no integration contracts, and they hold most of a mid-market terminal's real maintenance data today.</p>
+<ul>
+<li><b>Phone photos.</b> Timestamp and location place each photo in a yard zone. On-device text recognition reads painted equipment numbers, container numbers, hour meters, and dashboard fault codes. A before-and-after pair becomes verification evidence. A shared maintenance album files the photos people already take.</li>
+<li><b>Document scanner for paper that stays.</b> End-of-shift sign-off sheets, loading sheets from the guard shack, and the work-request form get snapped and turned into structured records, without a fight with crews over paper.</li>
+<li><b>Maintenance phone line.</b> Voicemail is transcribed into a draft work request; caller ID identifies the reporter. This covers vendors and operators who don't have the app.</li>
+<li><b>Text message.</b> "Unit 153 leaking coolant" plus a photo, texted to one number.</li>
+<li><b>Email inbox.</b> Forwarded quotes and invoices are parsed and tagged to an asset automatically, which clears the uncategorized expense rows in the baseline.</li>
+<li><b>Tap tags on each machine.</b> An NFC or QR tap identifies the asset and fills the equipment-tag field from the old work-request form. It also proves the pre-shift check happened at the machine.</li>
+<li><b>Voice shortcut.</b> Hands-free voice report with location, for people wearing gloves.</li>
+<li><b>Phone depth-scanning.</b> Measures pothole depth under container stacks that prior notes flagged to monitor; repeat measurements give a trend line.</li>
+<li><b>In-app equipment feedback form.</b> Operator requests feed the requirement library.</li>
+<li><b>Later, carefully: maintenance-radio transcription.</b> Needs union and site-security agreement before anything is recorded.</li>
+</ul>
+<p>Field reports are the noisiest input. Intake treats them as low-confidence until matched to an asset, and merges duplicates when three people photograph the same leak.</p>
+
+<h2>The core and its surfaces</h2>
+<p>Every input becomes one signal record: source and layer, asset match and match confidence, timestamp and location, attached evidence. The core turns signals into work orders behind a port-authority-style approval gate, then closes them only on proof: an after photo, a device back online, a clean reading.</p>
+<table>
+<thead><tr><th>Surface</th><th>Who uses it</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td><b>Field app (phone)</b></td><td>Operators, mechanics</td><td>Report a defect, today's checklists, my jobs, close-out with after photo, hours and parts</td></tr>
+<tr><td><b>Desktop console</b></td><td>Chief of maintenance, port-authority approver</td><td>Triage queue, approval, PO and work-order numbers, asset pages with full history, budget against actual. The maintenance-management portal the operator long wanted, built.</td></tr>
+<tr><td><b>Outbound</b></td><td>Vendors, crews</td><td>Quote requests and dispatch by text or email from the vendor registry; the weekly work-plan calendar the port authority asked for</td></tr>
+<tr><td><b>Ledger and reports</b></td><td>Management, auditors</td><td>Evidence trail per asset; an automatic monthly report replacing the budget workbooks</td></tr>
+</tbody></table>
+
+<h2>Painkiller baseline: what v1 must beat</h2>
+<p>The historical expense workbooks show a reactive-heavy operation that ran over budget, with a meaningful share of spend untraceable to any asset. Version 1 reproduces every one of these findings automatically.</p>
+<table>
+<thead><tr><th>Measure</th><th>Finding</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td><b>Spend against budget</b></td><td>Ran over budget by a mid-teens percentage</td><td>The headline cost-control problem</td></tr>
+<tr><td><b>Uncategorized spend</b></td><td>A double-digit share of expense lines untraceable to any asset</td><td>Cleanest demo metric: email parsing plus asset matching should drive it to near zero</td></tr>
+<tr><td><b>Spend concentration</b></td><td>The two highest-cost machines were over half of all spend</td><td>Where condition signals pay off first</td></tr>
+<tr><td><b>Preventive share</b></td><td>In the low-40s percent on the most-serviced machine</td><td>The prior plan's goal was to push this up</td></tr>
+</tbody></table>
+<div class="warn"><span class="k2">Not in the old data, track it from day one</span><p style="margin:0">Approval latency and time-to-repair aren't in the historical workbooks. They are the numbers that prove the coordination is worth paying for, so we capture both from the first day.</p></div>
+
+<h2>Phasing by integration cost</h2>
+<p>Layers are sequenced cheapest-to-connect first, so version 1 ships with zero vendor integrations.</p>
+<div class="steps">
+<div><span class="yr">v1 · field reports, back office, seed data</span> Reproduces every baseline number above automatically.</div>
+<div><span class="yr">v2 · observation harness, facility systems, weather and vessel schedule</span> Adds condition signals and maintenance windows.</div>
+<div><span class="yr">v3 · equipment telemetry and the terminal operating system</span> Slowest negotiations, highest value per signal.</div>
+</div>
+<div class="box"><b>Open question:</b> does the terminal still run a terminal operating system with a data feed, or only move counts by spreadsheet? It changes how early the operations-context layer can come online.</div>
+
+<footer>
+Product Structure · Intelligent Asset Lifecycle Orchestration · October 2026 · Pairs with <a href="architecture.html">Architecture</a> and <a href="painpoints.html">the maintenance-economics check</a>. Baseline figures generalized from a facility's historical maintenance workbooks. <a href="index.html">Back to the data room</a>
+</footer>
+</main></body></html>
